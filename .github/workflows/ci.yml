@@ -38,4 +38,4 @@ jobs:
         run: clojure -M:test/env:test/run
 
       - name: Build uberjar (tools.build)
-        run: clojure -T:build/task jar
+        run: clojure -T:build/task uberjar
