@@ -35,7 +35,9 @@ jobs:
             ${{ runner.os }}-m2-
 
       - name: Run tests (Kaocha)
+        working-directory: service
         run: clojure -M:test/env:test/run
 
       - name: Build uberjar (tools.build)
+        working-directory: service
         run: clojure -T:build/task uberjar
