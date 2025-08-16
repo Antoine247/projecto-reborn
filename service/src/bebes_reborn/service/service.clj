@@ -56,7 +56,7 @@
   ;; TODO: call greet with hash-map argument
   ([] (greet "secret engineering"))
   ([{:keys [team-name]}]
-   (str "bebes-reborn service service developed by the " team-name " team")))
+   (str "El servicio de bebes reborn esta siendo desarrollado por " team-name)))
 
 
 (comment

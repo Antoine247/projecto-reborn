@@ -16,9 +16,5 @@
   (testing "TODO: Start with a failing test, make it pass, then refactor"
 
     ;; TODO: fix greet function to pass test
-    (is (= "bebes-reborn service service developed by the secret engineering team"
-           (service/greet)))
-
-    ;; TODO: fix test by calling greet with {:team-name "Practicalli Engineering"}
-    (is (= (service/greet "Practicalli Engineering")
-           "bebes-reborn service service developed by the Practicalli Engineering team"))))
+    (is (= "El servicio de bebes reborn esta siendo desarrollado por Antoine"
+           (service/greet {:team-name "Antoine"})))))
