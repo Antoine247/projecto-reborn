@@ -21,6 +21,11 @@ jobs:
           distribution: temurin
           java-version: '21'
 
+      - name: Set up Clojure CLI
+        uses: DeLaGuardo/setup-clojure@12.5
+        with:
+          cli: latest
+
       - name: Cache Maven (~/.m2)
         uses: actions/cache@v4
         with:
