@@ -84,6 +84,7 @@
                      :class-dir class-directory
                      :main      main-namespace
                      :uber-file uberjar-file})))
+(println "built finalizado en " class)
 
 ;; End of Build tasks
 ;; ---------------------------------------------------------

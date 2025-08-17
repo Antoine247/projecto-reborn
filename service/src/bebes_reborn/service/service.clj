@@ -22,7 +22,8 @@
   (:require
    ;; Component system
    [donut.system           :as donut]
-   [bebes-reborn.service.system :as system]))
+   [bebes-reborn.service.system :as system]
+   [system-repl]))
 
 
 ;; --------------------------------------------------
@@ -63,6 +64,8 @@
   ;; --------------------------------------------------
   ;; REPL workflow commands
 
-  (greet {:team-name "Antoine"}))
+  (greet {:team-name "Antoine"})
+  (greet))
+
 
    ; End of rich comment
