@@ -105,7 +105,7 @@ COPY --from=builder /build/target/bebes-reborn-service-standalone.jar /service/
 ENV SERVICE_PROFILE=prod
 
 # Expose port of HTTP Server
-EXPOSE 8080
+EXPOSE 3000
 
 # ------------------------
 # Run service
@@ -120,7 +120,7 @@ EXPOSE 8080
 #   CMD curl --fail http://localhost:8080/system-admin/status || exit 1
 # Exec array:
 HEALTHCHECK \
-    CMD ["curl", "--fail", "http://localhost:8080/system-admin/status"]
+    CMD ["curl", "--fail", "http://localhost:3000/system-admin/status"]
 
 
 # JDK_JAVA_OPTIONS environment variable for setting JVM options

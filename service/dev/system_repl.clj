@@ -30,22 +30,7 @@
                      [:services :event-log-publisher ::donut/config]
                      {:publisher {:type :console :pretty? true}}}))
 
-(defmethod donut/named-system :prod
-  [_]
-  (donut/system :donut.system/repl
-                {[:env :app-env] "prod"
-                 [:env :app-version] "0.1.0"
-                 [:env :http-port] (or (some-> (System/getenv "SERVICE_HTTP_PORT")
-                                               Integer/parseInt)
-                                       8080)
-                 [:env :persistence :database-host]     (or (System/getenv "POSTGRES_HOST") "db")
-                 [:env :persistence :database-port]     (or (System/getenv "POSTGRES_PORT") "5432")
-                 [:env :persistence :database-username] (or (System/getenv "POSTGRES_USERNAME") "kits")
-                 [:env :persistence :database-password] (or (System/getenv "POSTGRES_PASSWORD") "kits")
-                 [:env :persistence :database-schema]   (or (System/getenv "POSTGRES_SCHEMA") "kits")
-                 [:services :http-server ::donut/config :options :join?] true
-                 [:services :event-log-publisher ::donut/config :publisher]
-                 {:type :console-json :pretty? false}}))
+
 
 ;; ---------------------------------------------------------
 

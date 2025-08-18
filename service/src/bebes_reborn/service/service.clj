@@ -22,8 +22,7 @@
   (:require
    ;; Component system
    [donut.system           :as donut]
-   [bebes-reborn.service.system :as system]
-   [system-repl]))
+   [bebes-reborn.service.system :as system]))
 
 
 ;; --------------------------------------------------
