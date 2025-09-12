@@ -57,3 +57,6 @@
   "Return: fully qualified hash-map of system state"
   [] donut-repl-state/system)
 ;; ---------------------------------------------------------
+
+(comment
+  (start))
