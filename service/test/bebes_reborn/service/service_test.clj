@@ -10,11 +10,26 @@
 
 (ns bebes-reborn.service.service-test
   (:require [clojure.test :refer [deftest is testing]]
-            [bebes-reborn.service.service :as service]))
+            [bebes-reborn.service.service :as service]
+            [bebes-reborn.service.schema :as s]
+            [bebes-reborn.service.factories :as f]
+            [malli.core :as m]))
 
 (deftest service-test
   (testing "TODO: Start with a failing test, make it pass, then refactor"
 
     ;; TODO: fix greet function to pass test
     (is (= "El servicio de bebes reborn esta siendo desarrollado por Antoine"
-           (service/greet {:team-name "Antoine"})))))
+           (service/greet {:team-name "Antoine"})))
+    ))
+
+(deftest schema
+  (testing "kit generados sea valido"
+    (is true? (every? #(m/validate s/Kit %) (f/gen-kits 100))))
+  (testing "bebes generados sea valido"
+    (is true? (every? #(m/validate s/Baby %) (f/gen-babies 100))))
+  (testing "ventas generados sea valido"
+    (is true? (every? #(m/validate s/Sale %) (f/gen-sales 100)))))
+
+(comment
+  (clojure.test/run-tests))
