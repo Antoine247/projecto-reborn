@@ -23,6 +23,9 @@
   party.donut/system  {:mvn/version "0.0.241"}
   org.clojure/clojure {:mvn/version "1.12.0"}
 
+  ;; base de datos
+  org.postgresql/postgresql {:mvn/version "42.7.7"}
+  hikari-cp/hikari-cp {:mvn/version "3.3.0"}
   ;; Testing
   metosin/malli {:mvn/version "0.19.1"}
   clojure.java-time/clojure.java-time {:mvn/version "1.4.3"}}

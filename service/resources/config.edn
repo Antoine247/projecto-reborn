@@ -1,0 +1,7 @@
+{:db #profile {:dev {:dbtype "postgres"
+                     :dbname "bebes_reborn"
+                     :user "antoine"
+                     :username "antoine"
+                     :password "96004712"
+                     :host "localhost"
+                     :port 5432}}}

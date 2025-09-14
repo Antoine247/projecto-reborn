@@ -1,6 +1,4 @@
-(ns bebes-reborn.service.schema
-  (:require [malli.core :as m] 
-            [malli.generator :as mg]))
+(ns bebes-reborn.service.schema)
 
 (def Size [:enum :prematuro :recien-nacido])
 (def Currency [:enum :ARS :USD])
@@ -13,8 +11,6 @@
   [:map
    [:amount [:and int? [:fn #(>= % 0)]]]
    [:currency Currency]])
-
-
 (def Kit
   [:map
    [:id uuid?]
@@ -26,7 +22,7 @@
 (def Baby
   [:map
    [:id uuid?]
-   [:kit-id uuid?] 
+   [:kit-id uuid?]
    [:length-cm {:optional true} pos-int?]
    [:photos {:optional true} [:sequential string?]]
    [:status BabyStatus]])
@@ -45,9 +41,4 @@
    [:created-at inst?]
    [:updated-at inst?]])
 
-(comment
-  (m/schema? Kit)
-  (mg/generate Kit)
-  (mg/generate Baby)
-  (mg/generate Sale)
-  )
+

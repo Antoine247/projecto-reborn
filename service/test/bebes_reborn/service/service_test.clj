@@ -24,7 +24,7 @@
     ))
 
 (deftest schema
-  (testing "kit generados sea valido"
+  (testing "kits, generados sea valido"
     (is true? (every? #(m/validate s/Kit %) (f/gen-kits 100))))
   (testing "bebes generados sea valido"
     (is true? (every? #(m/validate s/Baby %) (f/gen-babies 100))))
